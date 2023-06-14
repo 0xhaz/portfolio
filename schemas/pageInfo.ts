@@ -26,7 +26,8 @@ export default defineType({
     {
       name: "backgroundInformation",
       title: "BackgroundInformation",
-      type: "string",
+      type: "array",
+      of: [{ type: "block" }],
     },
     {
       name: "profilePic",

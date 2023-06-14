@@ -1,11 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { PageInfo } from "@/typings";
+import { PageInfo, PortableTextBlock } from "@/typings";
 import { urlFor } from "@/sanity";
+import { PortableText, PortableTextComponentProps } from "@portabletext/react";
 
 type Props = {
   pageInfo: PageInfo;
+};
+
+type CustomComponents = {
+  a: React.ComponentType<PortableTextComponentProps>;
 };
 
 const About = ({ pageInfo }: Props) => {
@@ -34,43 +39,7 @@ const About = ({ pageInfo }: Props) => {
           <span className="underline decoration-[#f7ab0a]">little</span>{" "}
           background
         </h4>
-        <p className="text-base">
-          I am a self-taught developer with a passion for learning new
-          technologies. I have been working as SAP Consultant for nearly 15
-          years and currently expanding my knowledge in the field of blockchain
-          and web development. I am fascinated by the possibilities of
-          blockchain and how it aims to provide financial services without the
-          need of a central authority, using automated protocols and facilitate
-          fund transfers on an instant.
-          <br />
-          <br />
-          This is one of the reasons that I have invested my time in learning a
-          full stack web development and blockchain technologies. I have been
-          exploring the web3 ecosystem such as NFT, DeFi & DAO&apos;s and will
-          always be learning new things.
-          <br />
-          <br />
-          I&apos;m also a graduated student of{" "}
-          <span className="underline decoration-[#f7ab0a]">
-            <Link
-              href="https://github.com/0xhaz/chainshot-certificate/blob/main/HAZRIENNE_AHMAD_FEISAL.pdf"
-              target="_blank"
-            >
-              Chainshot Bootcamp
-            </Link>
-          </span>{" "}
-          (March 2022) and continously learning from front-end frameworks such
-          as React, NextJS, TailwindCSS, Framer Motion and back-end frameworks
-          such as NodeJS, ExpressJS, MongoDB, Solidity, Hardhat, Truffle, Web3,
-          EthersJS, etc.
-          <br />
-          <br />
-          You can see all my projects on my{" "}
-          <span className="underline decoration-[#f7ab0a]">
-            <Link href="#portfolio">portfolio</Link>
-          </span>{" "}
-          section below
-        </p>
+        <PortableText value={pageInfo?.backgroundInformation} />
       </div>
     </motion.div>
   );

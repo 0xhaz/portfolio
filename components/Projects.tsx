@@ -24,7 +24,7 @@ const Projects = ({ projects }: Props) => {
       </h3>
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80">
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div
             key={project._id}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
@@ -51,7 +51,7 @@ const Projects = ({ projects }: Props) => {
                   <Image
                     className="rounded-full gap-2  "
                     key={technology._id}
-                    src={urlFor(technology?.image).url()}
+                    src={urlFor(technology?.image)?.url()}
                     alt={technology?.title}
                     width={50}
                     height={50}

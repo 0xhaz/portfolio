@@ -16,13 +16,25 @@ interface Image {
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
   address: string;
-  backgroundInformation: string;
+  backgroundInformation: PortableTextBlock[];
   email: string;
   role: string;
   heroImage: Image;
   name: string;
   phoneNumber: string;
   profilePic: Image;
+}
+
+interface PortableTextMark {
+  _type: "span";
+  marks: string[];
+  text: string;
+}
+
+interface PortableTextBlock {
+  _type: "block";
+  style: string;
+  children: PortableTextMark[];
 }
 
 export interface Technology extends SanityBody {
