@@ -9,10 +9,6 @@ type Props = {
   pageInfo: PageInfo;
 };
 
-type CustomComponents = {
-  a: React.ComponentType<PortableTextComponentProps>;
-};
-
 const About = ({ pageInfo }: Props) => {
   return (
     <motion.div
